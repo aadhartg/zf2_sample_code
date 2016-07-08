@@ -1,0 +1,88 @@
+<?php echo $this->doctype(); ?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <?php echo $this->headTitle('' . $this->translate('Dating Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php //echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+        <!-- Le styles -->
+        <?php
+        echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                ->prependStylesheet($this->basePath() . '/css/datepicker.css')
+                ->prependStylesheet($this->basePath() . '/css/colorpicker.css')
+                ->prependStylesheet($this->basePath() . '/css/jquery-ui.css')
+                ->prependStylesheet($this->basePath() . '/css/colorbox.css')
+                ->prependStylesheet($this->basePath() . '/js/jqueryUI/themes/base/jquery-ui.css')
+                ->prependStylesheet($this->basePath() . '/css/admin_css.css')
+		 ->prependStylesheet($this->basePath() . '/css/jquery.contextMenu.css')
+		
+        ?>
+
+
+        <!-- Scripts -->
+        <?php
+        echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                 ->prependFile($this->basePath() . '/js/jquery.contextMenu.js')
+		->prependFile($this->basePath() . '/js/bootstrap.js')
+                ->prependFile($this->basePath() . '/js/jquery-ui.js')
+                ->prependFile($this->basePath() . '/js/jquery.nearest.js')
+                ->prependFile($this->basePath() . '/js/jscolor/jscolor.js')
+                ->prependFile($this->basePath() . '/js/jquery-ui.js')
+		->prependFile($this->basePath() . '/js/jquery.tablesorter.js')
+                ->prependFile($this->basePath() . '/js/jquery.form.js')
+                ->prependFile($this->basePath() . '/js/colorpicker.js')
+                ->prependFile($this->basePath() . '/js/jquery.js')
+		
+        ?>
+
+<!--<script>
+$(function() {
+$( "#datepicker" ).datepicker();
+});
+</script>-->
+
+    </head>
+
+    <body>  
+    <div id="header"><?php echo  $this->render('layout/adminmenu.phtml') ?></div>
+
+        <!--- content------------------>
+        <div class="container-fluid">
+            <?php
+            $title = 'Application Portfolio Settings ';
+            $this->headTitle($title);
+            ?>
+            <!--<div class="span3 well "  >	
+                   <ul class="nav nav-list">	
+                           <li class="nav-header"><?php echo $this->escapeHtml("Manage Portfolio"); ?></li>
+                           <li><a href="<?php echo $this->url('portfolio', array('action' => 'viewcategory')) ?>">Portfolio Category</a></li>
+                           <li><a href="<?php echo $this->url('portfolio', array('action' => 'manageattribute')) ?>">Manage Attributes</a></li>
+                           <li><a href="<?php echo $this->url('portfolio', array('action' => 'manageresponse')) ?>">Manage Responses</a></li>
+                           <li><a href="<?php echo $this->url('portfolio', array('action' => 'manageregistration')) ?>">Manage Registration</a></li>
+                   </ul>
+           </div>-->
+
+            <?php echo $this->content; ?>
+
+
+
+        </div>
+        <?php echo $this->inlineScript() ?>
+
+
+    </body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.categories').click(function() {
+
+            var cat_id = $(this).prop('id');
+            window.location.href = "<?php echo $this->basePath(); ?>/activity/index/" + cat_id;
+
+        });
+
+    });
+</script>
+

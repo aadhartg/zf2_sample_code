@@ -1,0 +1,100 @@
+<div class="row-fluid">
+            <div id="pcode_list" >
+                <div class="activityreport" style="border: 1px solid #CCCCCC!important; border-radius: 12px 12px 0 0!important;">
+                    <div class="bluehead">  <span style="width: 200px;" class="span1"> <span></span>  </div>
+                    <div style="border-left: 1px solid #ccc;border-right: 1px solid #ccc;width:99.88%;margin-bottom:-3px;border-radius:0 0 0 0;" class="row-fluid bggray promoheading">
+                        <div class="thnew" style="width: 9.6%;">Registration Date</div>
+                        <div class="thnew" style="width: 9.6%;">Login Id</div>
+                        <div class="thnew" style="width: 9.6%;">Username</div>
+                        <div class="thnew" style="width: 9.8%;">First name</div>
+                        <div class="thnew" style="width: 10.6%;">Last name</div>
+                        <div class="thnew" style="width: 9.7%;">Country</div>
+                        <div class="thnew" style="width: 7.5%;">State</div>
+                        <div class="thnew" style="width: 10.7%;">City</div>
+                        <div class="thnew" style="width: 8.4%;">Gender</div>
+                        <div class="thnew" style="width: 11.7%;">Action</div>
+                    </div>
+                    <div class="scrollspanthtabth" style="width:100%;min-height:700px;">
+|                        <table width="100%" border="0" class="statuscat">
+                            <tbody>
+
+<?php foreach ($paginator as $data) { ?>
+
+                                    <tr id="<?php echo $data['login_id']; ?>" class="reportlink">
+                                        <td style="width: 6%;"><?php echo date("m/d/y", strtotime($data['created'])); ?></td>
+                                        <td style="width: 7%;"><?php echo $data['login_id']; ?></td>   
+                                        <td style="width: 6%;"><?php if ($data['username'] != '') {
+        echo $data['username'];
+    } else {
+        echo "N/A";
+    } ?></td>   
+                                        <td style="width: 6%;"><?php if ($data['first_name'] != '') {
+        echo $data['first_name'];
+    } else {
+        echo "N/A";
+    } ?></td>   
+                                        <td style="width: 6%;"><?php if ($data['last_name'] != '') {
+        echo $data['last_name'];
+    } else {
+        echo "N/A";
+    } ?></td>     
+                                        <td style="width: 6%;"><?php if ($data['countryname'] != '') {
+        echo $data['countryname'];
+    } else {
+        echo "N/A";
+    } ?></td>   
+                                        <td style="width: 6%;"><?php if ($data['statename'] != '') {
+        echo $data['statename'];
+    } else {
+        echo "N/A";
+    } ?></td>   
+                                        <td style="width: 6%;"><?php if ($data['city_name'] != '') {
+        echo $data['city_name'];
+    } else {
+        echo "N/A";
+    } ?></td>   
+
+                                        <td style="width: 6%;"><?php if ($data['gender'] != '') {
+        echo $data['gender'];
+    } else {
+        echo "N/A";
+    } ?></td>    
+
+                                        <td style="width: 9%;">
+    <?php if ($data['user_block_status'] == 0) { ?> 
+                                                <input type="button" class="block_it" id="<?php echo $data['login_id']; ?>" value="Block"/>
+    <?php } else if ($data['user_block_status'] == 1) { ?> 
+                                                <input type="button" class="unblock_it" id="<?php echo $data['login_id']; ?>" value="Unblock"/>
+                    <?php } ?>
+                                            <input type="button" class="delete_it" id="<?php echo $data['login_id']; ?>" value="Delete"/>
+                                        </td>  
+
+
+                                    </tr>
+                <?php } ?> 
+                            </tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grayhead" style="margin-top:1px;width:100%;">
+            <div class="repstat"></div>
+            <div class="actpanel"></div>
+        </div>
+
+
+        <div class="thinst" style="float:right;  margin-right: 25px; max-height: 40px;">
+            <div id="pageselt_upper_sort">
+                <?php 
+                $current = $paginator->getCurrentItems();
+                $page_no = $paginator->getCurrentPageNumber();
+                ?>
+                <?php
+                $basePath = $this->basePath();
+                echo $this->paginationControl(
+                        $paginator, 'sliding', array("paginator/ajaxpaginator.phtml", 'Admin')
+                ); 
+                ?>
+            </div>
+        </div>

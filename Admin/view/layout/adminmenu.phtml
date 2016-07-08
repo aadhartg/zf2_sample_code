@@ -1,0 +1,131 @@
+<div class="logoandlogout">
+    <div class="name"><a  href="<?php echo $this->url('admin') ?>"><?php echo $this->translate('Site Family') ?></a></div>
+
+    <div class="logoutt">
+
+        <table width="100%" border="0">
+            <tr>
+                <td>
+                    <a style="cursor:pointer; color:#333333;" href="<?php echo $this->basePath() ?>/eventmanager">   
+                        Event Management
+                    </a>
+                </td>
+                <td>
+		    <a style="cursor:pointer; color:#333333;" href="<?php echo $this->basePath() ?>/eventmanager"> 
+			Event Photos
+		    </a>
+		</td>
+                <td>Event Content</td>
+                <td rowspan="2" style="border-right: none">
+                    <a style="cursor:pointer; color:#333333;" href="<?php echo $this->basePath() ?>/event/index">
+                        Event Home
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td> 
+		    <a style="cursor:pointer; color:#333333;" href="<?php echo $this->basePath() ?>/eventreport"> 
+			Ticket Statement
+		    </a>
+		</td>
+                <td>Validate</td>
+                <td>
+
+                    <a style="cursor:pointer; color:#333333;" href="<?php echo $this->basePath() ?>/eventlist"> 
+                        Notifications
+		    </a>
+
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+
+</div>
+<div class="container-fluid logmenu_registertwo">
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapseotner">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="nav-collapseotner nav-collapse collapse">
+                <ul class="nav">
+                    <li><a href="<?php echo $this->url('admin', array('action' => 'index')) ?>">Dashboard</a></li>
+<!--                    <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $this->translate('Manage Registration') ?></a>
+                        <ul class="dropdown-menu">
+                            <li ><a href="<?php echo $this->url('portfolio', array('action' => 'addcategory')); ?>"><?php echo $this->translate('Add Category') ?></a></li>
+                            <li><a href="<?php echo $this->url('portfolio', array('action' => 'viewcategory')); ?>"><?php echo $this->translate('Manage Category') ?></a></li>
+                            <li ><a href="<?php echo $this->url('portfolio', array('action' => 'manageregistration')); ?>"><?php echo $this->translate('Manage Registration') ?></a></li>
+                            <li ><a href="<?php echo $this->url('usermanagement', array('action' => 'index')); ?>"><?php echo $this->translate('User Management') ?></a></li>
+
+                        </ul>
+                    </li>-->
+		<li><a href="<?php echo $this->url('admin', array('action' => 'seo')) ?>">SEO</a></li>
+                    <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $this->translate('Manage') ?></a>
+
+                        <ul class="dropdown-menu">
+                            <li ><a href="<?php echo $this->url('activity', array('action' => 'index')); ?>"><?php echo $this->translate('Manage Activities') ?></a></li>
+                            <li ><a href="<?php echo $this->url('interest', array('action' => 'index')); ?>"><?php echo $this->translate('Manage Interest') ?></a></li>
+                            <li ><a href="<?php echo $this->url('labor', array('action' => 'index')); ?>"><?php echo $this->translate('Resource Manager') ?></a></li>
+                            <li ><a href="<?php echo $this->url('reviewlabor', array('action' => 'index')); ?>"><?php echo $this->translate('Review Manager') ?></a></li>
+                             <li ><a href="<?php echo $this->url('products', array('action' => 'index')); ?>"><?php echo $this->translate('Product Manager') ?></a></li>
+                            
+<!--                                     <li ><a href="<?php echo $this->url('category', array('action' => 'index')); ?>"><?php echo $this->translate('Manage Categories') ?></a></li>
+                             <li ><a href="<?php echo $this->url('category', array('action' => 'add')); ?>"><?php echo $this->translate('Add Categories') ?></a></li>
+                          <li ><a href="<?php echo $this->url('activity', array('action' => 'add')); ?>"><?php echo $this->translate('Add Activity') ?></a></li>-->
+                        </ul>
+
+                    </li>  
+
+                    </li>   
+                    <li>
+                    <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $this->translate('Manage Photo & Content ') ?></a>
+
+                        <ul class="dropdown-menu">
+                            <li ><a href="<?php echo $this->url('photomanagement', array('action' => 'index')) ?>">Photo Management</a></li>
+                            <li ><a href="<?php echo $this->url('contentmanagement', array('action' => 'index')) ?>">Content Management</a></li>
+                        </ul>
+                    </li>
+                    
+                    
+                    <li><a href="<?php echo $this->basePath() ?>/managevideos"><?php echo $this->translate('Manage Videos ') ?></a>                        
+                    </li>
+
+
+                    <li ><a href="<?php echo $this->url('promocodes', array('action' => 'index')) ?>">Promocodes</a></li>
+                     <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $this->translate('Reports ') ?></a>
+		                 	<ul class="dropdown-menu">
+                          	    <li><a href="<?php echo $this->url('reports', array('action' => 'index')); ?>"><?php echo $this->translate('Registration Reports') ?></a></li>
+                			    <li><a href="<?php echo $this->url('salereport',array('action'=>'index'))?>"><?php echo $this->translate('Sales Report Detail') ?></a></li>
+                			    <li><a href="<?php echo $this->url('salesummary',array('action'=>'index'))?>"><?php echo $this->translate('Sales Summary') ?></a></li>
+                                 <li><a href="<?php echo $this->url('reports',array('action'=>'admin'))?>"><?php echo $this->translate('Admin Report') ?></a></li>
+
+                        </ul>
+		          </li>
+                    <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><?php echo $this->translate('Charity ') ?></a>
+			         <ul class="dropdown-menu">
+                            <li ><a href="<?php echo $this->url('charity', array('action' => 'index')); ?>"><?php echo $this->translate('Charity Management') ?></a></li>
+                            <li><a href="<?php echo $this->url('systemholding', array('action' => 'index')); ?>"><?php echo $this->translate('System Holdings') ?></a></li>
+			    <li><a href="<?php echo $this->url('systemdonation', array('action' => 'index')); ?>"><?php echo $this->translate('System Donations') ?></a></li>
+			    <li><a href="<?php echo $this->url('donationreport', array('action' => 'index')); ?>"><?php echo $this->translate('Donation Reports') ?></a></li>
+			    <li><a href="<?php echo $this->url('donationsummary', array('action' => 'index')); ?>"><?php echo $this->translate('Donation Summary') ?></a></li>
+
+                        </ul>
+		    </li>
+                    <li ><a href="<?php echo $this->url('adminlogin', array('action' => 'logout')) ?>">Logout</a></li>
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

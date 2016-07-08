@@ -1,0 +1,119 @@
+<?php
+
+function array_searchRecursive($needle = null, $haystack = array()) {
+
+    $result = 'N/A';
+    foreach ($haystack as $key => $val) {
+        if ($val['main_attribute_id'] == trim($needle)) {
+
+            $result = $val['main_responses'];
+        }
+    }
+    return $result;
+}
+?>
+
+<div class="container-fluid graygrad promocontainer">
+    <div class="background-black" id="imageloadstatus"  style="display:none;">
+        <div style="position:fixed; top:40%; right:50%; z-index:5090; " id="loading">
+            <img src="<?php echo $this->basePath() ?>/img/loading.gif" style="width:50px; height:50px;">
+        </div>
+    </div>
+    <div class="span2" style="margin-left:50px">
+        <p class="webname">Lifetime Love <span class="diffreq" appid="5"></p>
+        <p class="webhours"><?php ?>
+            <span>
+
+            </span>
+        </p>
+    </div>
+
+    <div class="span2">
+        <p class="webname">Find me a Date <span class="diffreq" appid="1"><?php //echo $count_fmd;                                                                          ?></span></p>
+        <p class="webhours"><?php //echo $dt_fmd;                                                                         ?>
+            <span>
+<?php // if ($note_fmd == 1) {           ?>
+                <img src="<?php echo $this->basePath(); ?>/img/bluedot.png"/>
+<?php //}            ?>
+
+            </span>
+        </p>
+    </div>
+
+    <div class="span2">
+        <p class="webname">Find us a Date <span class="diffreq" appid="3"><?php //echo $count_fud;                                                                           ?></span></p>
+        <p class="webhours"><?php // echo $dt_fud;                                                                        ?>
+            <span>
+<?php //if ($note_fud == 1) {           ?>
+                <img src="<?php echo $this->basePath(); ?>/img/bluedot.png"/>
+<?php //}           ?>
+            </span>
+        </p>
+    </div>
+    <div class="span2">
+        <p class="webname">International <span class="diffreq" appid="4"><?php //echo $count_in;                                                                           ?></span></p>
+        <p class="webhours"><?php //echo $dt_in;                                                                        ?>
+            <span>
+                <?php // if ($note_in == 1) {          ?>
+                <img src="<?php echo $this->basePath(); ?>/img/bluedot.png"/>
+<?php // }           ?>
+            </span>
+        </p>
+    </div>
+    <div class="span2">
+        <p class="webname">Single on Wheels<span class="diffreq" appid="6"><?php //echo $count_sow;                                                                           ?></span></p>
+        <p class="webhours"><?php //echo $dt_sow;                                                                        ?>
+            <span>
+                <?php //if ($note_sow == 1) {          ?>
+                <img src="<?php echo $this->basePath(); ?>/img/bluedot.png"/>
+<?php //}           ?>
+            </span>
+        </p>
+    </div>
+    <div class="span2">
+        <p class="webname">friendsonly <span class="diffreq" appid="2"><?php //echo $count_fo;                                                                           ?></span></p>
+        <p class="webhours"><?php //echo $dt_fo;                                                                        ?>
+            <span>
+                <?php //if ($note_fo == 1) {          ?>
+                <img src="<?php echo $this->basePath(); ?>/img/bluedot.png"/>
+<?php //}            ?>
+            </span>
+        </p>
+    </div>
+    <div class="span2">
+        <p class="webname">Open</p>
+        <p class="webhours">&nbsp;</p>
+    </div>
+
+</div>
+<div class="row-fluid gray">
+    <div class="span4">
+        <h2 class="adminheading">User Management</h2>
+
+    </div>
+
+    
+    <div class="span11">
+
+        <div class="heading_selection_area">
+            <label>Report By Location</label>
+<?php echo $this->formRow($search_form->get('location')); ?>
+
+        </div>
+
+        <div class="heading_selection_area">
+            <label>Sort By</label>
+<?php echo $this->formRow($search_form->get('sortBy')); ?>
+
+        </div>
+
+        <div class="heading_selection_area">
+            <label>Users</label>
+<?php echo $this->formRow($search_form->get('userBy')); ?>
+
+        </div>
+
+    </div>
+</div>
+
+   
